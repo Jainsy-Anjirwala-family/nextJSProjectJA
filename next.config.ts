@@ -1,18 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-    output: 'export',
-    distDir: '/out',
-  /* config options here */
+  output: 'export',  // enables static HTML export
+  // distDir: 'out',  // optional, Next.js defaults to 'out' for static export
   images: {
-    remotePatterns: [], // if you need remote images
-    // allow local images served via API route with query string
-    localPatterns: [
-      {
-        // pattern to allow your API route images
-        pathname: "/api/service/image",
-      },
-    ],
+    remotePatterns: [], // optional, only if you have remote images
+    // remove localPatterns if pointing to API routes (won't work in static export)
   },
 };
 
